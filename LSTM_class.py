@@ -1,3 +1,6 @@
+import re
+import numpy as np
+import keras
 
 class Sequences():
     def __init__(self, text_object, max_len, step):
