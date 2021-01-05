@@ -81,7 +81,7 @@ class Chain:
         prefix_ind = self.ngram2ind[prefix]
         weights = self.transition_matrix_prob[prefix_ind].toarray()[0]
         if temperature != 1:
-            weights = add_weights_temperature(weights, temperature)
+            weights = self.add_weights_temperature(weights, temperature)
 
         token_ind = np.random.choice(range(len(weights)), p=weights)
         next_word = self.ind2token[token_ind]
@@ -92,7 +92,7 @@ class Chain:
         sequence = prefix.split(' ')
 
         for i in range(k):
-            next_word = self.return_next_word(prefix)
+            next_word = self.return_next_word(prefix, temperature=temperature)
             sequence.append(next_word)
             prefix = ' '.join(sequence[-self.n:])
 
@@ -100,5 +100,5 @@ class Chain:
 
     def bulk_generate_sequence(self, prefix, k, samples, temperature=1):
         for i in range(samples):
-            print(self.generate_sequence(prefix, k))
+            print(self.generate_sequence(prefix, k, temperature=temperature))
             print('\n')
