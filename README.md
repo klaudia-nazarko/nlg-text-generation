@@ -4,6 +4,8 @@
 
 The goal of this project is to generate text of fairy tale using different approaches: Markov Chain, LSTM neural network and Transformers (GPT-2). Models are going to be implemented on a word-level. The content of fairy tales [scraped](web_scraper.ipynb) from the Internet will be used as a text corpus.
 
+Learn more from the article based on this project: [**Practical text generation using GPT-2, LSTM and Markov Chain**](https://towardsdatascience.com/text-generation-gpt-2-lstm-markov-chain-9ea371820e1e)
+
 ------
 
 **Table of contents:**
